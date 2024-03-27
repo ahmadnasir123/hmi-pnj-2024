@@ -62,4 +62,30 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    // one to one relationship
+    public function detail_user()
+    {
+        // 2 parameter (path model , field foreign key) 
+        return $this->hasOne('App\Models\ManagementAccess\DetailUser', 'user_id');
+    }
+
+    public function employee()
+    {
+        // 2 parameter (path model , field foreign key) 
+        return $this->hasOne('App\Models\Operational\Employee', 'user_id');
+    }
+
+    // one to many relationship
+    public function role_user()
+    {
+        // 2 parameter (path model , field foreign key) 
+        return $this->hasMany('App\Models\ManagementAccess\RoleUser', 'user_id');
+    }
+
+    // many to many relationship
+    public function role()
+    {
+        return $this->belongsToMany('App\Models\ManagementAccess\Role');
+    }
 }
