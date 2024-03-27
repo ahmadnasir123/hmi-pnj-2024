@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('employee', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->nullable()->index('fk_employee_to_users');
+            // $table->foreignId('user_id')->nullable()->index('fk_employee_to_users');
             $table->string('name');
             $table->string('angkatan');
             $table->string('lk1');
