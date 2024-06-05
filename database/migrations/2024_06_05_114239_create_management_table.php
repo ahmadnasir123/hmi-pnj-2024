@@ -11,9 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('documentation', function (Blueprint $table) {
+        Schema::create('management', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
+            $table->foreignId('category_id')->nullable()->index('fk_management_to_category');
+            $table->string('name');
             $table->longText('photo')->nullable();
 
             $table->softDeletes();
@@ -26,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('documentation');
+        Schema::dropIfExists('management');
     }
 };

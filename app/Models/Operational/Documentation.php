@@ -11,7 +11,7 @@ class Documentation extends Model
     // use HasFactory;
     use SoftDeletes;
     // declare table
-    public $table = 'documentation';
+    public $table = 'documantation';
 
     //this is must type date yyyy-mm-dd hh:mm:ss
     protected $dates = [
@@ -21,7 +21,8 @@ class Documentation extends Model
     ];
 
     protected $fillable = [
-        'title',
+        'name',
+        'description',
         'photo',
         'created_at',
         'updated_at',
