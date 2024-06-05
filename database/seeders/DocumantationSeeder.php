@@ -3,10 +3,11 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use App\Models\Operational\Documantation;
 use App\Models\Operational\Documentation;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
-class DocumentationSeeder extends Seeder
+class DocumantationSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,7 +15,7 @@ class DocumentationSeeder extends Seeder
     public function run(): void
     {
         // create data here
-        $documentation = [
+        $documantation = [
             [
                 'title' => 'Documentation 1',
                 'photo' => null,
@@ -30,6 +31,6 @@ class DocumentationSeeder extends Seeder
         ];
 
         // this array $documentation will be insert to table documentation
-        Documentation::insert($documentation);
+        Documantation::insert($documantation);
     }
 }

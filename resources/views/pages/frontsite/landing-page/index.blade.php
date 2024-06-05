@@ -88,17 +88,17 @@
             <p class="text-[#A7B0B5] mt-2">Cara cepat untuk mendapatkan pengalaman pertama anda</p>
     
             <div class="grid gap-6 mt-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 sm:gap-8 md:gap-10 lg:gap-12">
-                @forelse($specialist as $key => $specialist_item)
+                {{-- @forelse($category as $key => $category_item) --}}
                 <!-- Card -->
                 <a href="#"
                     class="bg-white py-6 px-5 rounded-2xl transition hover:ring-offset-2 hover:ring-2 hover:ring-[#0D63F3]">
-                    <h5 class="text-[#1E2B4F] text-lg font-semibold">{{ $specialist_item->name ?? '' }}</h5>
-                    <p class="text-[#AFAEC3] mt-1">{{ $specialist_item->doctor->count() }} Dokter</p>
+                    {{-- <h5 class="text-[#1E2B4F] text-lg font-semibold">{{ $specicategory->name ?? '' }}</h5>
+                    <p class="text-[#AFAEC3] mt-1">{{ $specicategory->employee->count() }} Dokter</p> --}}
                 </a>
                 <!-- End Card -->
-                @empty
+                {{-- @empty --}}
                 {{-- empty --}}
-                @endforelse
+                {{-- @endforelse --}}
             </div>
     
         </div>
@@ -114,7 +114,7 @@
             <!-- Card -->
             <div class="grid gap-12 mt-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 lg:gap-10">
     
-                @forelse($doctor as $key => $doctor_item)
+                {{-- @forelse($doctor as $key => $doctor_item)
     
                 <a href="{{ route('appointment.doctor', $doctor_item->id) }}" class="group">
                     <div class="relative z-10 w-full h-[350px] rounded-2xl overflow-hidden">
@@ -132,19 +132,19 @@
                         <div>
                             <div class="text-[#1E2B4F] text-lg font-semibold">{{ $doctor_item->name ?? '' }}</div>
                             <div class="text-[#AFAEC3] mt-1">{{ $doctor_item->specialist->name ?? '' }}</div>
-                        </div>
+                        </div> --}}
                         {{-- <div class="flex items-center space-x-2">
                             <img src="{{ asset('/assets/frontsite/images/star.svg') }}" alt="Star">
                             <span class="block text-[#1E2B4F] font-medium">4.5</span>
                         </div> --}}
-                    </div>
+                    {{-- </div>
                 </a>
     
-                @empty
+                @empty --}}
     
                 {{-- empty --}}
     
-                @endforelse
+                {{-- @endforelse --}}
     
             </div>
             <!-- End Card -->
@@ -161,7 +161,7 @@
             <!-- Card -->
             <div class="grid gap-12 mt-10 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 xl:gap-10">
     
-                @forelse($documantation as $key => $documantation_item)
+                {{-- @forelse($documantation as $key => $documantation_item)
                 <div class="group">
                     <div class="relative z-10 w-full h-[350px] rounded-2xl overflow-hidden">
                         <img src="{{ url(Storage::url($documantation_item->photo)) }}"
@@ -175,18 +175,18 @@
                             <div class="text-[#1E2B4F] text-lg font-semibold">{{ $documantation_item->name ?? '' }}
                             </div>
                             <div class="text-[#AFAEC3] mt-1">{{ $documantation_item->description ?? '' }}</div>
-                        </div>
+                        </div> --}}
                         {{-- <div class="flex items-center space-x-2">
                             <img src="{{ asset('/assets/frontsite/images/star.svg') }}" alt="Star">
                             <span class="block text-[#1E2B4F] font-medium">4.5</span>
                         </div> --}}
-                    </div>
+                    {{-- </div>
                 </div>
-                @empty
+                @empty --}}
     
                 {{-- empty --}}
     
-                @endforelse
+                {{-- @endforelse --}}
     
             </div>
             <!-- End Card -->

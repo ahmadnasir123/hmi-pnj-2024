@@ -15,7 +15,7 @@ return new class extends Migration
             $table->foreign('user_id', 'fk_employee_to_users')
             ->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
             $table->foreign('category_id', 'fk_employee_to_category')
-                ->references('id')->on('category')->onUpdate('cascade')->onDelete('cascade');
+            ->references('id')->on('category')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 
