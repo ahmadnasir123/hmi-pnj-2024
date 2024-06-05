@@ -7,12 +7,26 @@ use Illuminate\Http\Request;
 
 class ManagementController extends Controller
 {
+
+    /**
+     * create a new controller instance
+     *
+     * @return void
+     */
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //
+        $management = Management::orderBy('created_at', 'desc')->get();
+
+        return view('pages.backsite.operational.management.index', compact('management'));
     }
 
     /**
@@ -20,7 +34,7 @@ class ManagementController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**

@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::table('management', function (Blueprint $table) {
             $table->foreign('category_id', 'fk_management_to_category')
-                ->references('id')->on('category_id')->onUpdate('CASCADE')
+                ->references('id')->on('category')->onUpdate('CASCADE')
                 ->onDelete('CASCADE');
         });
     }

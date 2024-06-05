@@ -1,11 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\backsite;
 
-use App\Models\Operational\Documantation;
 use Illuminate\Http\Request;
+use App\Models\MasterData\Category;
+use App\Http\Controllers\Controller;
+use App\Models\Operational\Employee;
 
-class DocumantationController extends Controller
+class EmployeeController extends Controller
 {
 
     /**
@@ -24,9 +26,12 @@ class DocumantationController extends Controller
      */
     public function index()
     {
-        $documantation = Documantation::orderBy('created_at', 'desc')->get();
+        $employee = Employee::orderBy('created_at', 'desc')->get();
 
-        return view('pages.backsite.operational.documantation.index', compact('documantation'));
+        $category = Category::orderBy('name', 'asc')->get();
+
+        
+        return view('pages.backsite.operational.employee.index', compact('employee', 'category'));
     }
 
     /**
@@ -34,7 +39,7 @@ class DocumantationController extends Controller
      */
     public function create()
     {
-        abort('404');
+        return abort(404);
     }
 
     /**
@@ -42,38 +47,38 @@ class DocumantationController extends Controller
      */
     public function store(Request $request)
     {
-        abort('404');
+        return abort(404);
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Documantation $documantation)
+    public function show(string $id)
     {
-        abort('404');
+        return abort(404);
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Documantation $documantation)
+    public function edit(string $id)
     {
-        abort('404');
+        return abort(404);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Documantation $documantation)
+    public function update(Request $request, string $id)
     {
-        abort('404');
+        return abort(404);
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Documantation $documantation)
+    public function destroy(string $id)
     {
-        abort('404');
+        return abort(404);
     }
 }
