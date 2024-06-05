@@ -94,7 +94,7 @@
                                 </div>
 
                                 {{-- this section must read from type user--}}
-                                <div class="text-sm text-[#AFAEC3]">Pasien</div>
+                                <div class="text-sm text-[#AFAEC3]">User</div>
                             </div>
                             <img class="h-12 w-12 rounded-full ring-1 ring-offset-4 ring-[#0D63F3]"
                                 src="{{ asset('/assets/frontsite/images/authenticated-user.svg') }}"

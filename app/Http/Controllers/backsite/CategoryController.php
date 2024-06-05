@@ -26,7 +26,9 @@ class CategoryController extends Controller
     {
         $category = Category::orderBy('name', 'asc')->get();
 
-        
+        return view('pages.backsite.master-data.category.index', compact('category'));
+
+
     }
 
     /**

@@ -18,13 +18,13 @@ class DashboardController extends Controller
     {
         $this->middleware('auth');
     }
-    
+
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //
+        return view('pages.backsite.dashboard.index');
     }
 
     /**
