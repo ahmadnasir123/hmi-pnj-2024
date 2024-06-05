@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\MasterData\Category;
 use Illuminate\Http\Request;
+use App\Models\MasterData\Category;
+use App\Http\Requests\Category\StoreCategoryRequest;
 
 class CategoryController extends Controller
 {
@@ -27,8 +28,6 @@ class CategoryController extends Controller
         $category = Category::orderBy('name', 'asc')->get();
 
         return view('pages.backsite.master-data.category.index', compact('category'));
-
-
     }
 
     /**
@@ -36,15 +35,23 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        return abort(440);
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreCategoryRequest $request)
     {
-        //
+        // get all request from fronsite
+        $data = $request->all();
+
+        // store to database
+        $category = Category::create($data);
+
+        // return response
+        alert()->success('Success Message', 'Successfully added new kategori');
+        return redirect()->route('backsite.category.index');
     }
 
     /**
@@ -52,7 +59,7 @@ class CategoryController extends Controller
      */
     public function show(Category $category)
     {
-        //
+        return abort(440);
     }
 
     /**
@@ -60,7 +67,7 @@ class CategoryController extends Controller
      */
     public function edit(Category $category)
     {
-        //
+        return abort(440);
     }
 
     /**
@@ -68,7 +75,7 @@ class CategoryController extends Controller
      */
     public function update(Request $request, Category $category)
     {
-        //
+        return abort(440);
     }
 
     /**
@@ -76,6 +83,6 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category)
     {
-        //
+        return abort(440);
     }
 }
