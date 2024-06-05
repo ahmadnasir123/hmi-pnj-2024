@@ -22,7 +22,36 @@ class StoreEmployeeRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'user_id' => [
+                'required', 'integer',
+            ],
+            'category_id' => [
+                'required', 'integer',
+            ],
+            'name' => [
+                'required', 'string', 'max:255'
+            ],
+            'angkatan' => [
+                'required', 'string', 'max:255'
+            ],
+            'lk1' => [
+                'required', 'string', 'max:255'
+            ],
+            'tahun_1' => [
+                'required', 'date',
+            ],
+            'lk2' => [
+                'nullable', 'string', 'max:255'
+            ],
+            'tahun_2' => [
+                'nullable', 'date',
+            ],
+            'lk3' => [
+                'nullable', 'string', 'max:255'
+            ],
+            'tahun_3' => [
+                'nullable', 'date',
+            ],
         ];
     }
 }
