@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use App\Models\MasterData\TypeUser;
 use App\Http\Controllers\Controller;
 
+use Symfony\Component\HttpFoundation\Response;
+use Illuminate\Support\Facades\Gate;
+
 class TypeUserController extends Controller
 {
 
@@ -25,6 +28,8 @@ class TypeUserController extends Controller
      */
     public function index()
     {
+        abort_if(Gate::denies('type_user_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+
         $type_user = TypeUser::all();
 
         return view('pages.backsite.management-access.type-user.index', compact('type_user'));
