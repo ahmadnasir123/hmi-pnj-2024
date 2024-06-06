@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\MasterData\Category;
 use App\Http\Requests\Category\StoreCategoryRequest;
+use App\Http\Requests\Category\UpdateCategoryRequest;
 
 class CategoryController extends Controller
 {
@@ -59,7 +60,7 @@ class CategoryController extends Controller
      */
     public function show(Category $category)
     {
-        return abort(440);
+        return view('pages.backsite.master-data.category.show', compact('category'));
     }
 
     /**
@@ -67,15 +68,22 @@ class CategoryController extends Controller
      */
     public function edit(Category $category)
     {
-        return abort(440);
+        return view('pages.backsite.master-data.category.edit', compact('category'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Category $category)
+    public function update(UpdateCategoryRequest $request, Category $category)
     {
-        return abort(440);
+        // get all request from fronsite
+        $data = $request->all();
+
+        // update to database
+        $category->update($data);
+
+        alert()->success('Success Message', 'Successfully updated cate$category');
+        return redirect()->route('backsite.cate$category.index');
     }
 
     /**
@@ -83,6 +91,9 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category)
     {
-        return abort(440);
+        $category->delete();
+
+        alert()->success('Success Message', 'Successfully deleted categ$category');
+        return back();
     }
 }
