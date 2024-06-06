@@ -1,16 +1,16 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\backsite;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\File;
-
+use App\Http\Controllers\Controller;
 use App\Models\Operational\Management;
-use App\Http\Requests\Management\StoreManagementRequest;
-use App\Http\Requests\Management\UpdateManagementRequest;
 
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Gate;
 use Symfony\Component\HttpFoundation\Response;
+use App\Http\Requests\Management\StoreManagementRequest;
+use App\Http\Requests\Management\UpdateManagementRequest;
 
 class ManagementController extends Controller
 {
@@ -25,7 +25,7 @@ class ManagementController extends Controller
     {
         $this->middleware('auth');
     }
-    
+
     /**
      * Display a listing of the resource.
      */

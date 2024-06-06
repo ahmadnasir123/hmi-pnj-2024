@@ -66,7 +66,7 @@
                     <li
                         class="{{ request()->is('backsite/category') || request()->is('backsite/category/*') || request()->is('backsite/*/category') || request()->is('backsite/*/category/*') ? 'active' : '' }} ">
                         <a class="menu-item" href="{{ route('backsite.category.index') }}">
-                            <i></i><span>Specialist</span>
+                            <i></i><span>Kategori Pengurus</span>
                         </a>
                     </li>
                     {{-- @endcan --}}
@@ -81,14 +81,14 @@
                         class="menu-title" data-i18n="Operational">Operational</span></a>
                 <ul class="menu-content">
 
-                    @can('doctor_access')
+                    {{-- @can('employee_access') --}}
                     <li
                         class="{{ request()->is('backsite/employee') || request()->is('backsite/employee/*') || request()->is('backsite/*/employee') || request()->is('backsite/*/employee/*') ? 'active' : '' }} ">
                         <a class="menu-item" href="{{ route('backsite.employee.index') }}">
                             <i></i><span>Kader HMI PNJ</span>
                         </a>
                     </li>
-                    @endcan
+                    {{-- @endcan --}}
 
                     {{-- @can('hospital_patient_access') --}}
                     <li

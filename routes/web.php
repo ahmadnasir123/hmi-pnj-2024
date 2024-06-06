@@ -1,10 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\CategoryController;
-use App\Http\Controllers\ManagementController;
+use App\Http\Controllers\backsite\ManagementController;
 use App\Http\Controllers\backsite\RoleController;
 use App\Http\Controllers\backsite\UserController;
+use App\Http\Controllers\backsite\CategoryController;
 use App\Http\Controllers\backsite\EmployeeController;
 use App\Http\Controllers\backsite\TypeUserController;
 use App\Http\Controllers\frontsite\LandingController;
