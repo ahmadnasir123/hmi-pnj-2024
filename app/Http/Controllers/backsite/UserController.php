@@ -38,9 +38,9 @@ class UserController extends Controller
 
         $user = User::orderBy('created_at', 'desc')->get();
         $type_user = TypeUser::orderBy('name', 'asc')->get();
-        $role = Role::all()->pluck('title', 'id');
+        $roles = Role::all()->pluck('title', 'id');
 
-        return view('pages.backsite.management-access.user.index', compact('user', 'role', 'type_user'));
+        return view('pages.backsite.management-access.user.index', compact('user', 'type_user', 'roles'));
     }
 
     /**
@@ -98,11 +98,11 @@ class UserController extends Controller
         abort_if(Gate::denies('user_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         $user->load('role', 'detail_user');
-        $role = Role::all()->pluck('title', 'id');
         $type_user = TypeUser::orderBy('name', 'asc')->get();
+        $role = Role::all()->pluck('title', 'id');
 
 
-        return view('pages.backsite.management-access.user.edit', compact('user', 'role', 'type_user'));
+        return view('pages.backsite.management-access.user.edit', compact('user', 'type_user', 'role'));
     }
 
     /**
