@@ -5,10 +5,11 @@ namespace App\Http\Controllers\backsite;
 use Illuminate\Http\Request;
 use App\Models\MasterData\Category;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Employee\UpdateEmployeeRequest;
 use App\Models\Operational\Employee;
-
 use Illuminate\Support\Facades\File;
+
+use App\Http\Requests\Employee\StoreEmployeeRequest;
+use App\Http\Requests\Employee\UpdateEmployeeRequest;
 
 class EmployeeController extends Controller
 {
@@ -48,14 +49,14 @@ class EmployeeController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreEmployeeRequest $request)
     {
         // Get all request data from the form
         $data = $request->all();
 
 
 
-        // Define the storage path for the doctor's photos
+        // Define the storage path for the employee's photos
         $storagePath = 'assets/file-employee';
 
         // Ensure the directory exists
@@ -90,7 +91,7 @@ class EmployeeController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Employee $id)
+    public function edit(Employee $employee)
     {
         // for select2 = ascending a to z
         $category = Employee::orderBy('name', 'asc')->get();
