@@ -19,6 +19,11 @@ class TypeUserSeeder extends Seeder
                 'created_at' => date('y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s'),
             ],
+            [
+                'name' => 'User',
+                'created_at' => date('y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s'),
+            ],
         ];
         // this array type_user  will be insert to tables 'type_user'
         TypeUser::insert($type_user);
