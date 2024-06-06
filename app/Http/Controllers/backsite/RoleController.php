@@ -93,8 +93,7 @@ class RoleController extends Controller
      */
     public function update(UpdateRoleRequest $request, Role $role)
     {
-        abort_if(Gate::denies('role_delete'), Response::HTTP_FORBIDDEN, '403 Forbidden');
-        
+
         // need more notes here
         $role->update($request->all());
         $role->permission()->sync($request->input('permission', []));
@@ -108,6 +107,8 @@ class RoleController extends Controller
      */
     public function destroy(Role $role)
     {
+        abort_if(Gate::denies('role_delete'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        
         $role->forceDelete();
 
         alert()->success('Success Message', 'Successfully deleted role');

@@ -11,6 +11,9 @@ use Illuminate\Support\Facades\File;
 use App\Http\Requests\Employee\StoreEmployeeRequest;
 use App\Http\Requests\Employee\UpdateEmployeeRequest;
 
+use Illuminate\Support\Facades\Gate;
+use Symfony\Component\HttpFoundation\Response;
+
 class EmployeeController extends Controller
 {
 
@@ -30,6 +33,8 @@ class EmployeeController extends Controller
      */
     public function index()
     {
+        abort_if(Gate::denies('employee_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+
         $employee = Employee::orderBy('created_at', 'desc')->get();
 
         $category = Category::orderBy('name', 'asc')->get();
@@ -53,8 +58,6 @@ class EmployeeController extends Controller
     {
         // Get all request data from the form
         $data = $request->all();
-
-
 
         // Define the storage path for the employee's photos
         $storagePath = 'assets/file-employee';
@@ -83,8 +86,10 @@ class EmployeeController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Employee $id)
+    public function show(Employee $employee)
     {
+        abort_if(Gate::denies('employee_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+
         return view('pages.backsite.operational.employee.show', compact('employee'));
     }
 
@@ -93,6 +98,8 @@ class EmployeeController extends Controller
      */
     public function edit(Employee $employee)
     {
+        abort_if(Gate::denies('employee_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+
         // for select2 = ascending a to z
         $category = Employee::orderBy('name', 'asc')->get();
 
@@ -141,6 +148,8 @@ class EmployeeController extends Controller
      */
     public function destroy(Employee $employee)
     {
+        abort_if(Gate::denies('employee_delete'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+
         // first checking old file to delete from storage
         $get_item = $employee['photo'];
 

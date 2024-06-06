@@ -9,6 +9,9 @@ use App\Models\Operational\Management;
 use App\Http\Requests\Management\StoreManagementRequest;
 use App\Http\Requests\Management\UpdateManagementRequest;
 
+use Illuminate\Support\Facades\Gate;
+use Symfony\Component\HttpFoundation\Response;
+
 class ManagementController extends Controller
 {
 
@@ -28,6 +31,8 @@ class ManagementController extends Controller
      */
     public function index()
     {
+        abort_if(Gate::denies('management_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+
         $management = Management::orderBy('created_at', 'desc')->get();
 
         return view('pages.backsite.operational.management.index', compact('management'));
@@ -80,6 +85,8 @@ class ManagementController extends Controller
      */
     public function show(Management $management)
     {
+        abort_if(Gate::denies('management_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+
         return view('pages.backsite.operational.management.show', compact('management'));
     }
 
@@ -88,6 +95,8 @@ class ManagementController extends Controller
      */
     public function edit(Management $management)
     {
+        abort_if(Gate::denies('management_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+
         // for select2 = ascending a to z
         $category = Management::orderBy('name', 'asc')->get();
 
@@ -136,6 +145,8 @@ class ManagementController extends Controller
      */
     public function destroy(Management $management)
     {
+        abort_if(Gate::denies('management_delete'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+
         // first checking old file to delete from storage
         $get_item = $management['photo'];
 

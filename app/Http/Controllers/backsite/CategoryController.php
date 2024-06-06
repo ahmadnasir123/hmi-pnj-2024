@@ -7,6 +7,9 @@ use App\Models\MasterData\Category;
 use App\Http\Requests\Category\StoreCategoryRequest;
 use App\Http\Requests\Category\UpdateCategoryRequest;
 
+use Illuminate\Support\Facades\Gate;
+use Symfony\Component\HttpFoundation\Response;
+
 class CategoryController extends Controller
 {
 
@@ -26,6 +29,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
+        abort_if(Gate::denies('category_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+
         $category = Category::orderBy('name', 'asc')->get();
 
         return view('pages.backsite.master-data.category.index', compact('category'));
@@ -60,6 +65,8 @@ class CategoryController extends Controller
      */
     public function show(Category $category)
     {
+        abort_if(Gate::denies('category_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+
         return view('pages.backsite.master-data.category.show', compact('category'));
     }
 
@@ -68,6 +75,8 @@ class CategoryController extends Controller
      */
     public function edit(Category $category)
     {
+        abort_if(Gate::denies('category_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+
         return view('pages.backsite.master-data.category.edit', compact('category'));
     }
 
@@ -91,6 +100,8 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category)
     {
+        abort_if(Gate::denies('category_delete'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+
         $category->delete();
 
         alert()->success('Success Message', 'Successfully deleted categ$category');
