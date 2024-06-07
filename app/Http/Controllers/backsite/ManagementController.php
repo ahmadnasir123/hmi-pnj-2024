@@ -3,11 +3,12 @@
 namespace App\Http\Controllers\backsite;
 
 use Illuminate\Http\Request;
+use App\Models\MasterData\Category;
 use App\Http\Controllers\Controller;
-use App\Models\Operational\Management;
 
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Gate;
+use App\Models\Operational\Management;
 use Symfony\Component\HttpFoundation\Response;
 use App\Http\Requests\Management\StoreManagementRequest;
 use App\Http\Requests\Management\UpdateManagementRequest;
@@ -35,7 +36,9 @@ class ManagementController extends Controller
 
         $management = Management::orderBy('created_at', 'desc')->get();
 
-        return view('pages.backsite.operational.management.index', compact('management'));
+        $category = Category::orderBy('name', 'asc')->get();
+
+        return view('pages.backsite.operational.management.index', compact('management', 'category'));
     }
 
     /**

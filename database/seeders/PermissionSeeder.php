@@ -190,6 +190,21 @@ class PermissionSeeder extends Seeder
                 'updated_at' => '2024-03-17 00:00:00',
             ],
             [
+                'title' => 'management_create',
+                'created_at' => '2024-03-17 00:00:00',
+                'updated_at' => '2024-03-17 00:00:00',
+            ],
+            [
+                'title' => 'management_edit',
+                'created_at' => '2024-03-17 00:00:00',
+                'updated_at' => '2024-03-17 00:00:00',
+            ],
+            [
+                'title' => 'management_delete',
+                'created_at' => '2024-03-17 00:00:00',
+                'updated_at' => '2024-03-17 00:00:00',
+            ],
+            [
                 'title'      => 'management_export',
                 'created_at' => '2024-03-17 00:00:00',
                 'updated_at' => '2024-03-17 00:00:00',
