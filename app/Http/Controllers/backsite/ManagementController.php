@@ -57,8 +57,6 @@ class ManagementController extends Controller
         // Get all request data from the form
         $data = $request->all();
 
-
-
         // Define the storage path for the doctor's photos
         $storagePath = 'assets/file-management';
 
@@ -101,7 +99,7 @@ class ManagementController extends Controller
         abort_if(Gate::denies('management_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         // for select2 = ascending a to z
-        $category = Management::orderBy('name', 'asc')->get();
+        $category = Category::orderBy('name', 'asc')->get();
 
         return view('pages.backsite.operational.management.edit', compact('management', 'category'));
     }
