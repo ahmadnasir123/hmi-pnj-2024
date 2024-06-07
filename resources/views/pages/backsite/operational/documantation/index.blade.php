@@ -212,7 +212,7 @@
                                                                 aria-expanded="false">Action</button>
                                                             <div class="dropdown-menu">
 
-                                                                @can('doctor_show')
+                                                                @can('documantation_show')
                                                                 <a href="#mymodal"
                                                                     data-remote="{{ route('backsite.documantation.show', $documantation_item->id) }}"
                                                                     data-toggle="modal" data-target="#mymodal"
@@ -221,7 +221,7 @@
                                                                 </a>
                                                                 @endcan
 
-                                                                @can('doctor_edit')
+                                                                @can('documantation_edit')
                                                                 <a class="dropdown-item"
                                                                     href="{{ route('backsite.documantation.edit', $documantation_item->id) }}">
                                                                     Edit
