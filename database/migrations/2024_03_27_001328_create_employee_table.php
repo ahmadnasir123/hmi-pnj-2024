@@ -13,16 +13,15 @@ return new class extends Migration
     {
         Schema::create('employee', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->nullable()->index('fk_employee_to_users');
             $table->foreignId('category_id')->nullable()->index('fk_employee_to_category');
             $table->string('name');
             $table->string('angkatan');
             $table->string('lk1');
-            $table->date('tahun_1');
+            $table->string('tahun_1');
             $table->string('lk2')->nullable();
-            $table->date('tahun_2')->nullable();
+            $table->string('tahun_2')->nullable();
             $table->string('lk3')->nullable();
-            $table->date('tahun_3')->nullable();
+            $table->string('tahun_3')->nullable();
 
             $table->softDeletes();
             $table->timestamps();

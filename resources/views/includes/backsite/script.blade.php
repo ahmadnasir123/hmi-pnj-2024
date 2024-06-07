@@ -30,3 +30,4 @@
 
 {{-- third party --}}
 <script src="{{ url('https://unpkg.com/boxicons@latest/dist/boxicons.js') }}"></script>
+

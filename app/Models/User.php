@@ -70,11 +70,6 @@ class User extends Authenticatable
         return $this->hasOne('App\Models\ManagementAccess\DetailUser', 'user_id');
     }
 
-    public function employee()
-    {
-        // 2 parameter (path model , field foreign key) 
-        return $this->hasOne('App\Models\Operational\Employee', 'user_id');
-    }
 
     // one to many relationship
     public function role_user()

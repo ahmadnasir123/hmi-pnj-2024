@@ -27,9 +27,6 @@ class UpdateEmployeeRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'user_id' => [
-                'required', 'integer',
-            ],
             'category_id' => [
                 'required', 'integer',
             ],
@@ -43,19 +40,19 @@ class UpdateEmployeeRequest extends FormRequest
                 'required', 'string', 'max:255'
             ],
             'tahun_1' => [
-                'required', 'date',
+                'required', 'string', 'max:255'
             ],
             'lk2' => [
                 'nullable', 'string', 'max:255'
             ],
             'tahun_2' => [
-                'nullable', 'date',
+                'nullable', 'string', 'max:255'
             ],
             'lk3' => [
                 'nullable', 'string', 'max:255'
             ],
             'tahun_3' => [
-                'nullable', 'date',
+                'nullable', 'string', 'max:255'
             ],
         ];
     }

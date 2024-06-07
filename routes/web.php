@@ -18,10 +18,10 @@ Route::resource('/', LandingController::class);
 //     return view('welcome');
 // });
 
-Route::group([ 'middleware' => ['auth:sanctum', 'verified']], function () {
+// Route::group([ 'middleware' => ['auth:sanctum', 'verified']], function () {
 
 
-});
+// });
 
 
 // route for backsite

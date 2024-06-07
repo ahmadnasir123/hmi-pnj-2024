@@ -28,7 +28,7 @@ class UpdateCategoryRequest extends FormRequest
     {
         return [
             'name' => [
-                'required', 'string', 'max:255', Rule::unique('specialist')->ignore($this->specialist),
+                'required', 'string', 'max:255', Rule::unique('category')->ignore($this->category),
             ],
         ];
     }

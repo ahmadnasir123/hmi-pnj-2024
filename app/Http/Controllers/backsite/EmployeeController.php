@@ -59,21 +59,21 @@ class EmployeeController extends Controller
         // Get all request data from the form
         $data = $request->all();
 
-        // Define the storage path for the employee's photos
-        $storagePath = 'assets/file-employee';
+        // // Define the storage path for the employee's photos
+        // $storagePath = 'assets/file-employee';
 
-        // Ensure the directory exists
-        $publicPath = public_path('storage/' . $storagePath);
-        if (!File::isDirectory($publicPath)) {
-            File::makeDirectory($publicPath, 0755, true, true);
-        }
+        // // Ensure the directory exists
+        // $publicPath = public_path('storage/' . $storagePath);
+        // if (!File::isDirectory($publicPath)) {
+        //     File::makeDirectory($publicPath, 0755, true, true);
+        // }
 
-        // Handle the file upload if a photo is provided
-        if ($request->hasFile('photo')) {
-            $data['photo'] = $request->file('photo')->store($storagePath, 'public');
-        } else {
-            $data['photo'] = null; // Or set a default image path if needed
-        }
+        // // Handle the file upload if a photo is provided
+        // if ($request->hasFile('photo')) {
+        //     $data['photo'] = $request->file('photo')->store($storagePath, 'public');
+        // } else {
+        //     $data['photo'] = null; // Or set a default image path if needed
+        // }
 
         // Store the data in the database
         $employee = Employee::create($data);
@@ -101,7 +101,7 @@ class EmployeeController extends Controller
         abort_if(Gate::denies('employee_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         // for select2 = ascending a to z
-        $category = Employee::orderBy('name', 'asc')->get();
+        $category = Category::orderBy('name', 'asc')->get();
 
         return view('pages.backsite.operational.employee.edit', compact('employee', 'category'));
     }

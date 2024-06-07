@@ -21,7 +21,6 @@ class Employee extends Model
     ];
 
     protected $fillable = [
-        'user_id',
         'category_id',
         'name',
         'angkatan',
@@ -35,12 +34,6 @@ class Employee extends Model
         'updated_at',
         'deleted_at',
     ];
-
-    // one to many relationship
-    public function user()
-    {
-        return $this->belongsTo('App\Models\User', 'user_id', 'id');
-    }
 
     // one to many relationship
     public function category()

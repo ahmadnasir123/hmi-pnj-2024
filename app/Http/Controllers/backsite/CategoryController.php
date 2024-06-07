@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\backsite;
 
 use Illuminate\Http\Request;
-use App\Models\MasterData\Category;
+
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Category\StoreCategoryRequest;
 use App\Http\Requests\Category\UpdateCategoryRequest;
@@ -11,6 +11,9 @@ use App\Http\Requests\Category\UpdateCategoryRequest;
 use Illuminate\Support\Facades\Gate;
 use Symfony\Component\HttpFoundation\Response;
 
+use Auth;
+
+use App\Models\MasterData\Category;
 class CategoryController extends Controller
 {
 
@@ -93,7 +96,7 @@ class CategoryController extends Controller
         $category->update($data);
 
         alert()->success('Success Message', 'Successfully updated cate$category');
-        return redirect()->route('backsite.cate$category.index');
+        return redirect()->route('backsite.category.index');
     }
 
     /**
