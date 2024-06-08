@@ -99,22 +99,7 @@
                                             </div>
 
                                             <div class="form-group row">
-                                                <label class="col-md-3 label-control" for="name">Name</label>
-                                                <div class="mx-auto col-md-9">
-                                                    <input type="text" id="name" name="name" class="form-control"
-                                                        placeholder="example john doe or jane doe"
-                                                        value="{{old('name')}}" autocomplete="off" required>
-
-                                                    @if($errors->has('name'))
-                                                    <p style="font-style: bold; color: red;">{{ $errors->first('name')
-                                                        }}</p>
-                                                    @endif
-                                                </div>
-                                            </div>
-
-
-                                            <div class="form-group row">
-                                                <label class="col-md-3 label-control" for="photo">Photo</label>
+                                                <label class="col-md-3 label-control" for="photo">Photo <code style="color:red;">required</code></label>
                                                 <div class="mx-auto col-md-9">
                                                     <div class="custom-file">
                                                         <input type="file" accept="image/png, image/svg, image/jpeg"

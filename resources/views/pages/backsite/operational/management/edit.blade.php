@@ -93,18 +93,21 @@
                                                 </div>
                                             </div>
 
-                                            <div class="form-group row">
-                                                <label class="col-md-3 label-control" for="name">Name <code
-                                                        style="color:red;">required</code></label>
+                                            <div class="form-group row {{ $errors->has('employee_id') ? 'has-error' : '' }}">
+                                                <label class="col-md-3 label-control">Name <code style="color:red;">required</code></label>
                                                 <div class="mx-auto col-md-9">
-                                                    <input type="text" id="name" name="name" class="form-control"
-                                                        placeholder="example sekretaris"
-                                                        value="{{ old('name', isset($category) ? $management->name : '') }}"
-                                                        autocomplete="off" required>
-
-                                                    @if($errors->has('name'))
-                                                    <p style="font-style: bold; color: red;">{{ $errors->first('name')
-                                                        }}</p>
+                                                    <select name="employee_id" id="employee_id" class="form-control select2" required>
+                                                        <option value="{{ '' }}" disabled selected>Choose</option>
+                                                        @foreach($employee as $key => $employee_item)
+                                                        <option value="{{ $employee_item->id }}" {{ $management->
+                                                            employee_id == $employee_item->id ? 'selected' : ''
+                                                            }}>{{ $employee_item->name }}</option>
+                                                        @endforeach
+                                                    </select>
+                                            
+                                                    @if($errors->has('employee_id'))
+                                                    <p style="font-style: bold; color: red;">{{
+                                                        $errors->first('employee_id') }}</p>
                                                     @endif
                                                 </div>
                                             </div>

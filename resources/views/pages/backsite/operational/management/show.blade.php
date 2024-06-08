@@ -1,11 +1,11 @@
 <table class="table table-bordered">
     <tr>
         <th>Divisi</th>
-        <td>{{ isset($doctor->category->name) ? $doctor->category->name : 'N/A' }}</td>
+        <td>{{ isset($management->category->name) ? $management->category->name : 'N/A' }}</td>
     </tr>
     <tr>
         <th>Name</th>
-        <td>{{ isset($management->name) ? $management->name : 'N/A' }}</td>
+        <td>{{ isset($management->employee) ? $management->employee->name : 'N/A' }}</td>
     </tr>
     <tr>
         <th>Photo</th>

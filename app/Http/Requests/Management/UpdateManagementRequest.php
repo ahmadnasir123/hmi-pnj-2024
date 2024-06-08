@@ -30,7 +30,7 @@ class UpdateManagementRequest extends FormRequest
             'category_id' => [
                 'required', 'integer',
             ],
-            'name' => [
+            'employee_id' => [
                 'required', 'string', 'max:255',
             ],
             'photo' => [

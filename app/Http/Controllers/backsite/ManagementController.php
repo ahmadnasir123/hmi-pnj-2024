@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\MasterData\Category;
 use App\Http\Controllers\Controller;
 
+use App\Models\Operational\Employee;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Gate;
 use App\Models\Operational\Management;
@@ -38,7 +39,9 @@ class ManagementController extends Controller
 
         $category = Category::orderBy('name', 'asc')->get();
 
-        return view('pages.backsite.operational.management.index', compact('management', 'category'));
+        $employee = Employee::orderBy('name', 'asc')->get();
+
+        return view('pages.backsite.operational.management.index', compact('management', 'category', 'employee', 'employee'));
     }
 
     /**
@@ -101,7 +104,9 @@ class ManagementController extends Controller
         // for select2 = ascending a to z
         $category = Category::orderBy('name', 'asc')->get();
 
-        return view('pages.backsite.operational.management.edit', compact('management', 'category'));
+        $employee = Employee::orderBy('name', 'asc')->get();
+
+        return view('pages.backsite.operational.management.edit', compact('management', 'category', 'employee'));
     }
 
     /**

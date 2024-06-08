@@ -23,7 +23,7 @@ class Management extends Model
 
     protected $fillable = [
         'category_id',
-        'name',
+        'employee_id',
         'photo',
         'created_at',
         'updated_at',
@@ -34,5 +34,11 @@ class Management extends Model
     public function category()
     {
         return $this->belongsTo('App\Models\MasterData\Category', 'category_id', 'id');
+    }
+
+    // one to many relationship
+    public function employee()
+    {
+        return $this->belongsTo('App\Models\Operational\Employee', 'employee_id', 'id');
     }
 }

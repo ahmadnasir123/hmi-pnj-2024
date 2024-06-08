@@ -41,5 +41,11 @@ class Employee extends Model
         return $this->belongsTo('App\Models\MasterData\Category', 'category_id', 'id');
     }
 
+    // one to many relationship
+    public function management()
+    {
+        return $this->hasMany('App\Models\Operational\Management', 'management_id');
+    }
+
     
 }

@@ -96,7 +96,7 @@
                                                     Kegiatan <code style="color:red;">required</code></label>
                                                 <div class="mx-auto col-md-9">
                                                     <input type="text" id="description" name="description"
-                                                        class="form-control" placeholder="example john doe or jane doe"
+                                                        class="form-control" placeholder="example Bukber 2024 di depok"
                                                         value="{{old('description')}}" autocomplete="off" required>
 
                                                     @if($errors->has('description'))

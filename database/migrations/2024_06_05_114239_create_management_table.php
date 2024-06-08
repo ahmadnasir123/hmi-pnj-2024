@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('management', function (Blueprint $table) {
             $table->id();
             $table->foreignId('category_id')->nullable()->index('fk_management_to_category');
-            $table->string('name');
+            $table->foreignId('employee_id')->nullable()->index('fk_management_to_employee');
             $table->longText('photo')->nullable();
 
             $table->softDeletes();
