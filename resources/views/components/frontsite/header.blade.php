@@ -6,9 +6,11 @@
 
                 <!-- Logo Brand -->
                 <a href="{{ route('index') }}" class="flex items-center flex-shrink-0">
-                    <img class="w-auto h-12 lg:h-16" src="{{ asset('assets/frontsite/images/logo.png') }}"
-                        alt="Meet Doctor Logo" />
+                    <img class="w-auto h-52 lg:h-16" src="{{ asset('assets/frontsite/images/hmi.png') }}"
+                        alt="HMI  Logo" />
+
                 </a>
+
 
                 <!-- Navigation Menu -->
                 <div class="hidden lg:ml-6 lg:flex lg:space-x-12">
@@ -21,17 +23,29 @@
                         text-lg" : "hover:text-gray-500 inline-flex items-center px-1 pt-1 text-lg font-medium" }} ">
                         Home
                     </a>
-                    <a href=" #spesialis"
+                    <a href=" #kategoru"
                         class="text-[#1E2B4F] relative hover:text-gray-500 inline-flex items-center px-1 pt-1 text-lg font-medium">
-                        Spesialis
+                        Kategori
                     </a>
-                    <a href="#doctor"
+                    <a href="#pengurus"
                         class="text-[#1E2B4F] relative hover:text-gray-500 inline-flex items-center px-1 pt-1 text-lg font-medium">
-                        Dokter
+                        Pengurus
                     </a>
-                    <a href="#"
+                    <a href="#kader"
                         class="text-[#1E2B4F] relative hover:text-gray-500 inline-flex items-center px-1 pt-1 text-lg font-medium">
-                        Dokumentasi
+                        Kader
+                    </a>
+                    <a href="#galeri"
+                        class="text-[#1E2B4F] relative hover:text-gray-500 inline-flex items-center px-1 pt-1 text-lg font-medium">
+                        Galeri
+                    </a>
+                    <a href="#tulisan_kader"
+                        class="text-[#1E2B4F] relative hover:text-gray-500 inline-flex items-center px-1 pt-1 text-lg font-medium">
+                        Tulisan Kader
+                    </a>
+                    <a href="#kegiatan"
+                        class="text-[#1E2B4F] relative hover:text-gray-500 inline-flex items-center px-1 pt-1 text-lg font-medium">
+                        Kontak
                     </a>
                 </div>
 
@@ -174,22 +188,28 @@
           -->
             <a href="{{ route('index') }}"
                 class="bg-indigo-50 border-[#0D63F5] text-[#1E2B4F] block pl-3 pr-4 py-2 border-l-4 text-base font-semibold">Home</a>
-            <a href="#spesialis"
-                class="border-transparent text-[#1E2B4F] hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">Spesialis</a>
-            <a href="#doctor"
-                class="border-transparent text-[#1E2B4F] hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">Dokter</a>
-            <a href="#dokumentasi"
-                class="border-transparent text-[#1E2B4F] hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">Dokumentasi</a>
-        </div>
+            <a href="#kategoru"
+                class="border-transparent text-[#1E2B4F] hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">Kategori</a>
+            <a href="#pengurus"
+                class="border-transparent text-[#1E2B4F] hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">Pengurus</a>
+            <a href="#kader"
+                class="border-transparent text-[#1E2B4F] hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">Kader</a>
+            <a href="#galeri"
+                class="border-transparent text-[#1E2B4F] hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">Galeri</a
+            <a href="#tulisar_kader"
+                class="border-transparent text-[#1E2B4F] hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">Tulisan Kader</a
+            <a href="#kontak"
+                class="border-transparent text-[#1E2B4F] hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">Kontak</a
+            </div>
 
-        <!-- Profile (Mobile no authenticated) -->
-        <div class="py-3 border-gray-200">
-            <a href="{{ route('login') }}"
-                class="flex items-center justify-center text-center mx-4 rounded-full text-[#1E2B4F] text-lg font-medium bg-[#F2F6FE] px-10 py-3">
-                Sign In
-            </a>
-        </div>
+            <!-- Profile (Mobile no authenticated) -->
+            <div class="py-3 border-gray-200">
+                <a href="{{ route('login') }}"
+                    class="flex items-center justify-center text-center mx-4 rounded-full text-[#1E2B4F] text-lg font-medium bg-[#F2F6FE] px-10 py-3">
+                    Sign In
+                </a>
+            </div>
 
-    </div>
+        </div>
 </nav>
 <!-- End Header -->
