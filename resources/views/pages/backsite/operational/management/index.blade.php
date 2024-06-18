@@ -98,6 +98,24 @@
                                                 </div>
                                             </div>
 
+                                            <div class="form-group row {{ $errors->has('employee_id') ? 'has-error' : '' }}">
+                                                <label class="col-md-3 label-control">Name <code style="color:red;">required</code></label>
+                                                <div class="mx-auto col-md-9">
+                                                    <select name="employee_id" id="employee_id" class="form-control select2" required>
+                                                        <option value="{{ '' }}" disabled selected>Choose</option>
+                                                        @foreach($employee as $key => $employee_item)
+                                                        <option value="{{ $employee_item->id }}">{{
+                                                            $employee_item->name }}</option>
+                                                        @endforeach
+                                                    </select>
+                                            
+                                                    @if($errors->has('employee_id'))
+                                                    <p style="font-style: bold; color: red;">{{
+                                                        $errors->first('employee_id') }}</p>
+                                                    @endif
+                                                </div>
+                                            </div>
+
                                             <div class="form-group row">
                                                 <label class="col-md-3 label-control" for="photo">Photo <code style="color:red;">required</code></label>
                                                 <div class="mx-auto col-md-9">
@@ -182,7 +200,7 @@
                                                     <td>{{ isset($management_item->created_at) ? date("d/m/Y
                                                         H:i:s",strtotime($management_item->created_at)) : '' }}</td>
                                                     <td>{{ $management_item->category->name ?? '' }}</td>
-                                                    <td>{{ $management_item->name ?? '' }}</td>
+                                                    <td>{{ $management_item->employee->name ?? '' }}</td>
                                                     <td>
                                                         @if($management_item->photo)
                                                         <a data-fancybox="gallery"

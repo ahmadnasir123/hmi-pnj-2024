@@ -44,7 +44,7 @@ class Employee extends Model
     // one to many relationship
     public function management()
     {
-        return $this->hasMany('App\Models\Operational\Management', 'management_id');
+        return $this->hasMany('App\Models\Operational\Management', 'employee_id');
     }
 
     

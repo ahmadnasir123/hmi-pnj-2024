@@ -16,8 +16,8 @@ return new class extends Migration
                 ->references('id')->on('category')->onUpdate('CASCADE')
                 ->onDelete('CASCADE');
             $table->foreign('employee_id', 'fk_management_to_employee')
-            ->references('id')->on('employee')->onUpdate('CASCADE')
-            ->onDelete('CASCADE');
+                ->references('id')->on('employee')->onUpdate('CASCADE')
+                ->onDelete('CASCADE');
         });
     }
 

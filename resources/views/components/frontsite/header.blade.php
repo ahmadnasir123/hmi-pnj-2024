@@ -23,10 +23,6 @@
                         text-lg" : "hover:text-gray-500 inline-flex items-center px-1 pt-1 text-lg font-medium" }} ">
                         Home
                     </a>
-                    <a href=" #kategoru"
-                        class="text-[#1E2B4F] relative hover:text-gray-500 inline-flex items-center px-1 pt-1 text-lg font-medium">
-                        Kategori
-                    </a>
                     <a href="#pengurus"
                         class="text-[#1E2B4F] relative hover:text-gray-500 inline-flex items-center px-1 pt-1 text-lg font-medium">
                         Pengurus
@@ -34,6 +30,10 @@
                     <a href="#kader"
                         class="text-[#1E2B4F] relative hover:text-gray-500 inline-flex items-center px-1 pt-1 text-lg font-medium">
                         Kader
+                    </a>
+                    <a href=" #alumni"
+                        class="text-[#1E2B4F] relative hover:text-gray-500 inline-flex items-center px-1 pt-1 text-lg font-medium">
+                        Alumni
                     </a>
                     <a href="#galeri"
                         class="text-[#1E2B4F] relative hover:text-gray-500 inline-flex items-center px-1 pt-1 text-lg font-medium">

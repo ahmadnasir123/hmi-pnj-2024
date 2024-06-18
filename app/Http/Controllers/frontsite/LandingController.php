@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers\frontsite;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\MasterData\Category;
+use App\Http\Controllers\Controller;
+use App\Models\Operational\Employee;
+use App\Models\Operational\Management;
 
 class LandingController extends Controller
 {
@@ -12,7 +15,10 @@ class LandingController extends Controller
      */
     public function index()
     {
-        return view('pages.frontsite.landing-page.index');
+        $category = Category::orderBy('name', 'desc')->limit(15)->get();
+        $management = Management::orderBy('employee_id', 'desc')->limit(15)->get();
+        
+        return view('pages.frontsite.landing-page.index', compact('category', 'management'));
     }
 
     /**

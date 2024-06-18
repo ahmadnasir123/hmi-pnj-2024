@@ -60,6 +60,11 @@ class ManagementController extends Controller
         // Get all request data from the form
         $data = $request->all();
 
+        // Validate if employee_id exists in employee table
+        if (!Employee::find($data['employee_id'])) {
+            return redirect()->back()->withErrors(['employee_id' => 'Employee not found.']);
+        }
+
         // Define the storage path for the doctor's photos
         $storagePath = 'assets/file-management';
 

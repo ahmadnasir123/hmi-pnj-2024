@@ -31,7 +31,7 @@ class StoreManagementRequest extends FormRequest
                 'required', 'integer',
             ],
             'employee_id' => [
-                'required', 'string', 'max:255',
+                'required', 'integer',
             ],
             'photo' => [
                 'nullable', 'mimes:jpeg,jpg,svg,png', 'max:10000',
