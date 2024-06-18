@@ -102,7 +102,7 @@
     <!-- End Popular Categories -->
     
     <!-- Management -->
-    <section id="doctor" class="mt-4 lg:mt-16">
+    <section id="pengurus" class="mt-4 lg:mt-16">
         <div class="px-4 mx-auto max-w-7xl lg:px-14 py-14">
             <h3 class="text-[#1E2B4F] text-2xl font-semibold">Pengurus</h3>
             <p class="text-[#A7B0B5] mt-2">Pengurus HMI Komisariat PNJ {{ \Carbon\Carbon::now()->format('F Y') }}</p>

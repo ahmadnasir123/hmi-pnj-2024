@@ -11,8 +11,11 @@ use App\Http\Controllers\frontsite\LandingController;
 use App\Http\Controllers\backsite\DashboardController;
 use App\Http\Controllers\backsite\PermissionController;
 use App\Http\Controllers\backsite\DocumantationController;
+use App\Http\Controllers\Frontsite\ReportEmployeeController;
 
 Route::resource('/', LandingController::class);
+
+Route::resource('kader', ReportEmployeeController::class);
 
 // Route::get('/', function () {
 //     return view('welcome');

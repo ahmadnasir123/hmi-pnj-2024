@@ -54,6 +54,9 @@ class UpdateEmployeeRequest extends FormRequest
             'tahun_3' => [
                 'nullable', 'string', 'max:255'
             ],
+            'photo' => [
+                'nullable', 'mimes:jpeg,jpg,svg,png', 'max:10000',
+            ],
         ];
     }
 }

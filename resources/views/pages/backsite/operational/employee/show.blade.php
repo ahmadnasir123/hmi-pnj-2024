@@ -35,4 +35,19 @@
         <th>Tahun</th>
         <td>{{ isset($employee->tahun_3) ? $employee->tahun_3 : 'N/A' }}</td>
     </tr>
+    <tr>
+        <th>Photo</th>
+        <td>
+            <img src="
+                    @if ($employee->photo != "")
+                        @if(File::exists('storage/'.$employee->photo))
+                            {{ url(Storage::url($employee->photo)) }}
+                        @else
+                           {{ 'N/A' }}
+                        @endif
+                    @else
+                        {{ 'N/A' }}
+                    @endif " alt="pengurus photo" class="users-avatar-shadow" height="100" width="100">
+        </td>
+    </tr>
 </table>

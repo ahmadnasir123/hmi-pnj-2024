@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('tahun_2')->nullable();
             $table->string('lk3')->nullable();
             $table->string('tahun_3')->nullable();
+            $table->longText('photo')->nullable();
 
             $table->softDeletes();
             $table->timestamps();

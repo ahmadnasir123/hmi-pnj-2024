@@ -11,15 +11,15 @@
         <th>Photo</th>
         <td>
             <img src="
-                @if ($management->photo != "")
-                    @if(File::exists('storage/'.$management->photo))
-                        {{ url(Storage::url($management->photo)) }}
+                    @if ($management->photo != "")
+                        @if(File::exists('storage/'.$management->photo))
+                            {{ url(Storage::url($management->photo)) }}
+                        @else
+                           {{ 'N/A' }}
+                        @endif
                     @else
-                       {{ 'N/A' }}
-                    @endif
-                @else
-                    {{ 'N/A' }}
-                @endif " alt="pengurus photo" class="users-avatar-shadow" height="100" width="100">
+                        {{ 'N/A' }}
+                    @endif " alt="pengurus photo" class="users-avatar-shadow" height="100" width="100">
         </td>
     </tr>
 </table>

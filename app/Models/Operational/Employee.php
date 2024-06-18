@@ -30,6 +30,7 @@ class Employee extends Model
         'tahun_2',
         'lk3',
         'tahun_3',
+        'photo',
         'created_at',
         'updated_at',
         'deleted_at',

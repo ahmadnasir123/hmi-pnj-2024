@@ -191,6 +191,27 @@
                                                     @endif
                                                 </div>
                                             </div>
+                                            <div class="form-group row">
+                                                <label class="col-md-3 label-control" for="photo">Photo <code style="color:green;">optional</code></label>
+                                                <div class="mx-auto col-md-9">
+                                                    <div class="custom-file">
+                                                        <input type="file" accept="image/png, image/svg, image/jpeg" class="custom-file-input" id="photo"
+                                                            name="photo">
+                                                        <label class="custom-file-label" for="photo" aria-describedby="photo">Choose File</label>
+                                                    </div>
+                                            
+                                                    <p class="text-muted"><small class="text-danger">Hanya dapat
+                                                            mengunggah 1 file</small><small> dan yang dapat digunakan
+                                                            JPEG, JPG, SVG, PNG & Maksimal ukuran file hanya 10
+                                                            MegaBytes</small></p>
+                                            
+                                                    @if($errors->has('photo'))
+                                                    <p style="font-style: bold; color: red;">{{ $errors->first('photo')
+                                                        }}</p>
+                                                    @endif
+                                            
+                                                </div>
+                                            </div>
 
                             
                                         </div>

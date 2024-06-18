@@ -60,20 +60,20 @@ class EmployeeController extends Controller
         $data = $request->all();
 
         // // Define the storage path for the employee's photos
-        // $storagePath = 'assets/file-employee';
+        $storagePath = 'assets/file-employee';
 
         // // Ensure the directory exists
-        // $publicPath = public_path('storage/' . $storagePath);
-        // if (!File::isDirectory($publicPath)) {
-        //     File::makeDirectory($publicPath, 0755, true, true);
-        // }
+        $publicPath = public_path('storage/' . $storagePath);
+        if (!File::isDirectory($publicPath)) {
+            File::makeDirectory($publicPath, 0755, true, true);
+        }
 
         // // Handle the file upload if a photo is provided
-        // if ($request->hasFile('photo')) {
-        //     $data['photo'] = $request->file('photo')->store($storagePath, 'public');
-        // } else {
-        //     $data['photo'] = null; // Or set a default image path if needed
-        // }
+        if ($request->hasFile('photo')) {
+            $data['photo'] = $request->file('photo')->store($storagePath, 'public');
+        } else {
+            $data['photo'] = null; // Or set a default image path if needed
+        }
 
         // Store the data in the database
         $employee = Employee::create($data);

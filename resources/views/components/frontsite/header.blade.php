@@ -27,8 +27,10 @@
                         class="text-[#1E2B4F] relative hover:text-gray-500 inline-flex items-center px-1 pt-1 text-lg font-medium">
                         Pengurus
                     </a>
-                    <a href="#kader"
-                        class="text-[#1E2B4F] relative hover:text-gray-500 inline-flex items-center px-1 pt-1 text-lg font-medium">
+                    <a href="{{ route('kader.index') }}" class="text-[#1E2B4F] relative {{ request()->routeIs('kader.index') ? " after:absolute
+                        after:content-[''] after:border-b-2 after:border-[#0D63F5] after:w-8/12 after:-translate-x-1/2 after:bottom-3
+                        after:left-1/2 font-semibold inline-flex items-center px-1 text-lg"
+                        : "hover:text-gray-500 inline-flex items-center px-1 pt-1 text-lg font-medium" }} ">
                         Kader
                     </a>
                     <a href=" #alumni"
