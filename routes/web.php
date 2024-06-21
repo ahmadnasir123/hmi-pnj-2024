@@ -1,14 +1,15 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\backsite\ManagementController;
 use App\Http\Controllers\backsite\RoleController;
 use App\Http\Controllers\backsite\UserController;
+use App\Http\Controllers\Backsite\AlumniController;
 use App\Http\Controllers\backsite\CategoryController;
 use App\Http\Controllers\backsite\EmployeeController;
 use App\Http\Controllers\backsite\TypeUserController;
 use App\Http\Controllers\frontsite\LandingController;
 use App\Http\Controllers\backsite\DashboardController;
+use App\Http\Controllers\backsite\ManagementController;
 use App\Http\Controllers\backsite\PermissionController;
 use App\Http\Controllers\backsite\DocumantationController;
 use App\Http\Controllers\Frontsite\ReportEmployeeController;
@@ -53,6 +54,9 @@ Route::group(['prefix' => 'backsite', 'as' => 'backsite.', 'middleware' => ['aut
 
     // employee
     Route::resource('employee', EmployeeController::class);
+
+    // alumni
+    Route::resource('alumni', AlumniController::class)->parameters(['alumni' => 'alumni']);
 
     // management
     Route::resource('management', ManagementController::class);

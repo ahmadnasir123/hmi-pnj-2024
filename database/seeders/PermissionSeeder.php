@@ -173,6 +173,43 @@ class PermissionSeeder extends Seeder
                 'updated_at' => '2024-03-17 00:00:00',
             ],
 
+            // alumni
+            [
+                'title'      => 'alumni_access',
+                'created_at' => '2024-03-17 00:00:00',
+                'updated_at' => '2024-03-17 00:00:00',
+            ],
+            [
+                'title'      => 'alumni_table',
+                'created_at' => '2024-03-17 00:00:00',
+                'updated_at' => '2024-03-17 00:00:00',
+            ],
+            [
+                'title'      => 'alumni_create',
+                'created_at' => '2024-03-17 00:00:00',
+                'updated_at' => '2024-03-17 00:00:00',
+            ],
+            [
+                'title'      => 'alumni_edit',
+                'created_at' => '2024-03-17 00:00:00',
+                'updated_at' => '2024-03-17 00:00:00',
+            ],
+            [
+                'title'      => 'alumni_show',
+                'created_at' => '2024-03-17 00:00:00',
+                'updated_at' => '2024-03-17 00:00:00',
+            ],
+            [
+                'title'      => 'alumni_delete',
+                'created_at' => '2024-03-17 00:00:00',
+                'updated_at' => '2024-03-17 00:00:00',
+            ],
+            [
+                'title'      => 'alumni_export',
+                'created_at' => '2024-03-17 00:00:00',
+                'updated_at' => '2024-03-17 00:00:00',
+            ],
+
             // management
             [
                 'title'      => 'management_access',

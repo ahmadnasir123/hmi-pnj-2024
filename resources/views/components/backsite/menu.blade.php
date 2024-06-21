@@ -90,11 +90,20 @@
                     </li>
                     {{-- @endcan --}}
 
-                    {{-- @can('hospital_patient_access') --}}
+                    {{-- @can('pengurus_access') --}}
                     <li
                         class="{{ request()->is('backsite/management') || request()->is('backsite/management/*') || request()->is('backsite/*/management') || request()->is('backsite/*/management/*') ? 'active' : '' }} ">
                         <a class="menu-item" href="{{ route('backsite.management.index') }}">
                             <i></i><span>Pengurus</span>
+                        </a>
+                    </li>
+                    {{-- @endcan --}}
+
+                    {{-- @can('alumni_access') --}}
+                    <li
+                        class="{{ request()->is('backsite/alumni') || request()->is('backsite/alumni/*') || request()->is('backsite/*/alumni') || request()->is('backsite/*/alumni/*') ? 'active' : '' }} ">
+                        <a class="menu-item" href="{{ route('backsite.alumni.index') }}">
+                            <i></i><span>Alumni</span>
                         </a>
                     </li>
                     {{-- @endcan --}}
