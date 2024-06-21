@@ -130,6 +130,19 @@
                                                 </div>
                                             </div>
 
+                                            <div class="form-group row">
+                                                <label class="col-md-3 label-control" for="link">URL Tulisan <code style="color:red;">required</code></label>
+                                                <div class="mx-auto col-md-9">
+                                                    <input type="text" id="link" name="link" class="form-control" placeholder="example link/website tulisan"
+                                                        value="{{old('link')}}" autocomplete="off" required>
+                                            
+                                                    @if($errors->has('link'))
+                                                    <p style="font-style: bold; color: red;">{{ $errors->first('link')
+                                                        }}</p>
+                                                    @endif
+                                                </div>
+                                            </div>
+
                                         </div>
 
                                         <div class="text-right form-actions">
@@ -182,6 +195,7 @@
                                                     <th>Judul</th>
                                                     <th>Deskripsi</th>
                                                     <th>Photo</th>
+                                                    <th>URL Tulisan</th>
                                                     <th style="text-align:center; width:150px;">Action</th>
                                                 </tr>
                                             </thead>
@@ -201,6 +215,7 @@
                                                         No Photo
                                                         @endif
                                                     </td>
+                                                    <td>{{ $tulisan_item->link ?? '' }}</td>
                                                     <td class="text-center">
 
                                                         <div class="mb-1 mr-1 btn-group">

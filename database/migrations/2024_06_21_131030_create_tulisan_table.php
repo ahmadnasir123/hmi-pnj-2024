@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('judul');
             $table->string('deskripsi');
             $table->longText('photo')->nullable();
+            $table->string('link')->nullable();
 
             $table->softDeletes();
             $table->timestamps();

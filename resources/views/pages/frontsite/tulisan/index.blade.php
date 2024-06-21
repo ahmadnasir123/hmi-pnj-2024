@@ -8,83 +8,40 @@
 <main class="min-h-screen">
 
     <!--Section blog start-->
-    <section id="blog" class="pb-32 pt-36 bg-slate-100 dark:bg-dark">
-        <div class="container">
-            <div class="w-full px-4">
-                <div class="max-w-xl mx-auto mb-16 text-center">
-                    <h4 class="mb-2 text-lg font-semibold text-primary">Blog</h4>
-                    <h2 class="mb-4 text-3xl font-bold text-dark sm:text-4xl lg:text-5xl dark:text-white">Tulisan
-                        terkini
-                    </h2>
-                    <p class="font-medium text-md text-secondary md:text-lg">Lorem ipsum dolor sit amet consectetur
-                        adipisicing elit. Ea in consequatur asperiores culpa quae aspernatur enim repellendus excepturi
-                        sequi qui.</p>
+    <section id="alumni" class="relative mt-12">
+        <div class="px-4 py-16 mx-auto max-w-7xl lg:px-14">
+            <h3 class="text-2xl font-semibold text-[#1E2B4F]">Tulisan Kader</h3>
+            <p class="text-[#A7B0B5] mt-2">Tulisan Kader HMI Komisariat PNJ</p>
+
+            <!-- Card -->
+            <div class="grid gap-8 mt-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 lg:gap-8">
+                @forelse($tulisan as $tulisan_item)
+                <div class="mb-8 overflow-hidden transition bg-white shadow-lg rounded-xl card-tulisan">
+                    <div class="relative w-full h-[250px] overflow-hidden">
+                        <img src="{{ url(Storage::url($tulisan_item->photo)) }}"
+                            class="object-cover object-center w-full h-full bg-center bg-no-repeat"
+                            alt="{{ $tulisan_item->name ?? '' }}">
+                    </div>
+                    <div class="p-2">
+                        <div class="text-[#1E2B4F] text-base font-semibold">{{ $tulisan_item->judul ?? '' }}</div>
+                        {{-- <div class="text-[#AFAEC3] mt-1 text-sm">{{ $alumni_item->category->name ?? '' }}</div>
+                        --}}
+                        <div class="mt-2">
+                            <div class="text-[#AFAEC3] mt-1 text-sm">{{ $tulisan_item->deskripsi }}</div>
+                        </div>
+                        <div class="mt-4">
+                            <a href="{{ $tulisan_item->link }}" class="hover-button">Baca
+                                Selengkapnya
+                            </a>
+                            
+                        </div>
+                    </div>
                 </div>
+                @empty
+                {{-- empty --}}
+                @endforelse
             </div>
-
-            <div class="flex flex-wrap">
-                <div class="w-full px-4 lg:w-1/2 xl:w-1/3">
-                    <div class="mb-10 overflow-hidden bg-white shadow-lg rounded-xl dark:bg-slate-800">
-                        <img src="https://source.unsplash.com/360x200?programming" alt="Programming" class="w-full">
-
-                        <div class="px-6 py-8">
-                            <h3>
-                                <a href="#"
-                                    class="block mb-3 text-xl font-semibold truncate text-dark hover:text-primary dark:text-white">Tips
-                                    Belajar Programming</a>
-                            </h3>
-                            <p class="font=font-medium text-base text-secondary mb-6">Lorem, ipsum dolor sit amet
-                                consectetur adipisicing elit. Reprehenderit placeat blanditiis odit vitae autem
-                                voluptatibus
-                                suscipit. Harum similique adipisci aliquid?</p>
-                            <a href="#"
-                                class="px-4 py-2 text-sm font-medium text-white rounded-lg bg-primary hover:opacity-80">Baca
-                                Selengkapnya</a>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="w-full px-4 lg:w-1/2 xl:w-1/3">
-                    <div class="mb-10 overflow-hidden bg-white shadow-lg rounded-xl dark:bg-slate-800">
-                        <img src="https://source.unsplash.com/360x200?laptop+gaming" alt="Laptop Gaming" class="w-full">
-
-                        <div class="px-6 py-8">
-                            <h3>
-                                <a href="#"
-                                    class="block mb-3 text-xl font-semibold truncate text-dark hover:text-primary dark:text-white">Review
-                                    Laptop Gaming</a>
-                            </h3>
-                            <p class="font=font-medium text-base text-secondary mb-6">Lorem ipsum dolor sit amet
-                                consectetur
-                                adipisicing elit. Quibusdam velit in aspernatur!</p>
-                            <a href="#"
-                                class="px-4 py-2 text-sm font-medium text-white rounded-lg bg-primary hover:opacity-80">Baca
-                                Selengkapnya</a>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="w-full px-4 lg:w-1/2 xl:w-1/3">
-                    <div class="mb-10 overflow-hidden bg-white shadow-lg rounded-xl dark:bg-slate-800">
-                        <img src="https://source.unsplash.com/360x200?coffe" alt="Coffe" class="w-full">
-
-                        <div class="px-6 py-8">
-                            <h3>
-                                <a href="#"
-                                    class="block mb-3 text-xl font-semibold truncate text-dark hover:text-primary dark:text-white">Menikmati
-                                    secangkir kopi</a>
-                            </h3>
-                            <p class="font=font-medium text-base text-secondary mb-6">Lorem ipsum dolor sit amet
-                                consectetur
-                                adipisicing elit. Odio, cumque natus! Quibusdam, pariatur nihil.</p>
-                            <a href="#"
-                                class="px-4 py-2 text-sm font-medium text-white rounded-lg bg-primary hover:opacity-80">Baca
-                                Selengkapnya</a>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
+            <!-- End Card -->
         </div>
     </section>
     <!--Section blog end-->

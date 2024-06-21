@@ -35,6 +35,9 @@ class StoreTulisanRequest extends FormRequest
             'photo' => [
                 'nullable', 'mimes:jpeg,jpg,svg,png', 'max:10000',
             ],
+            'link' => [
+                'nullable', 'string'
+            ],
         ];
     }
 }

@@ -25,6 +25,7 @@ class Tulisan extends Model
         'judul',
         'deskripsi',
         'photo',
+        'link',
         'created_at',
         'updated_at',
         'deleted_at',
