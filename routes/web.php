@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\backsite\RoleController;
 use App\Http\Controllers\backsite\UserController;
 use App\Http\Controllers\Backsite\AlumniController;
+use App\Http\Controllers\Backsite\TulisanController;
 use App\Http\Controllers\backsite\CategoryController;
 use App\Http\Controllers\backsite\EmployeeController;
 use App\Http\Controllers\backsite\TypeUserController;
@@ -63,6 +64,9 @@ Route::group(['prefix' => 'backsite', 'as' => 'backsite.', 'middleware' => ['aut
 
     // management
     Route::resource('management', ManagementController::class);
+
+    // tulisan
+    Route::resource('tulisan', TulisanController::class);
 
 });
 // Route::middleware([

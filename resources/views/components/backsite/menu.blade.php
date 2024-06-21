@@ -108,6 +108,15 @@
                     </li>
                     {{-- @endcan --}}
 
+                    {{-- @can('tulisan_access') --}}
+                    <li
+                        class="{{ request()->is('backsite/tulisan') || request()->is('backsite/tulisan/*') || request()->is('backsite/*/tulisan') || request()->is('backsite/*/tulisan/*') ? 'active' : '' }} ">
+                        <a class="menu-item" href="{{ route('backsite.tulisan.index') }}">
+                            <i></i><span>Tulisan Kader</span>
+                        </a>
+                    </li>
+                    {{-- @endcan --}}
+
 
                     {{-- here you can add nurse --}}
 

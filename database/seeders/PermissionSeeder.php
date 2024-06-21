@@ -210,6 +210,38 @@ class PermissionSeeder extends Seeder
                 'updated_at' => '2024-03-17 00:00:00',
             ],
 
+            // tulisan
+            [
+                'title'      => 'tulisan_access',
+                'created_at' => '2024-03-17 00:00:00',
+                'updated_at' => '2024-03-17 00:00:00',
+            ],
+            [
+                'title'      => 'tulisan_table',
+                'created_at' => '2024-03-17 00:00:00',
+                'updated_at' => '2024-03-17 00:00:00',
+            ],
+            [
+                'title'      => 'tulisan_create',
+                'created_at' => '2024-03-17 00:00:00',
+                'updated_at' => '2024-03-17 00:00:00',
+            ],
+            [
+                'title'      => 'tulisan_edit',
+                'created_at' => '2024-03-17 00:00:00',
+                'updated_at' => '2024-03-17 00:00:00',
+            ],
+            [
+                'title'      => 'tulisan_show',
+                'created_at' => '2024-03-17 00:00:00',
+                'updated_at' => '2024-03-17 00:00:00',
+            ],
+            [
+                'title'      => 'tulisan_delete',
+                'created_at' => '2024-03-17 00:00:00',
+                'updated_at' => '2024-03-17 00:00:00',
+            ],
+
             // management
             [
                 'title'      => 'management_access',
