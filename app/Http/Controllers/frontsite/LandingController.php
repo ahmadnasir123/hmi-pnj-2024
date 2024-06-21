@@ -16,6 +16,7 @@ class LandingController extends Controller
     public function index()
     {
         $category = Category::orderBy('name', 'desc')->limit(15)->get();
+
         $management = Management::orderBy('employee_id', 'desc')->limit(15)->get();
         
         return view('pages.frontsite.landing-page.index', compact('category', 'management'));
@@ -26,7 +27,7 @@ class LandingController extends Controller
      */
     public function create()
     {
-        //
+        return abort(404);
     }
 
     /**
@@ -34,7 +35,7 @@ class LandingController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return abort(404);
     }
 
     /**
@@ -42,7 +43,7 @@ class LandingController extends Controller
      */
     public function show(string $id)
     {
-        //
+        return abort(404);
     }
 
     /**
@@ -50,7 +51,7 @@ class LandingController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        return abort(404);
     }
 
     /**
@@ -58,7 +59,7 @@ class LandingController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        return abort(404);
     }
 
     /**
@@ -66,6 +67,6 @@ class LandingController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        return abort(404);
     }
 }
