@@ -8,7 +8,7 @@
 <main class="min-h-screen">
 
     <!-- Alumni Schedule -->
-    <section id="documentation" class="relative mt-12">
+    <section id="gallery" class="relative mt-12">
         <div class="px-4 py-16 mx-auto max-w-7xl sm:px-14">
             <h3 class="text-2xl font-semibold text-[#1E2B4F]">Galeri</h3>
             <p class="text-[#A7B0B5] mt-2">Galeri HMI Komisariat PNJ</p>
@@ -17,7 +17,7 @@
                 @forelse($documantation as $documantation_item)
                 <div class="col-12 col-sm-6 col-md-4 col-lg-3">
                     <a href="{{ url(Storage::url($documantation_item->photo)) }}" data-toggle="lightbox"
-                        data-caption="{{ $documantation_item->name ?? '' }}" data-gallery="mydocumentation">
+                        data-caption="{{ $documantation_item->name ?? '' }}" data-gallery="mydocumantation">
                         <img src="{{ url(Storage::url($documantation_item->photo)) }}"
                             alt="{{ $documantation_item->name ?? '' }}" class="rounded img-fluid"
                             style="max-height: 250px; object-fit: cover;">

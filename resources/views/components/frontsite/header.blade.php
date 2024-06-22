@@ -6,9 +6,8 @@
 
                 <!-- Logo Brand -->
                 <a href="{{ route('index') }}" class="flex items-center flex-shrink-0">
-                    <img class="w-auto h-52 lg:h-16" src="{{ asset('assets/frontsite/images/hmi.png') }}"
-                        alt="HMI  Logo" />
-
+                    <img class="w-auto h-20 max-w-full md:h-16 lg:h-12 xl:h-16" src="{{ asset('assets/frontsite/images/hmi.png') }}"
+                        alt="HMI Logo" />
                 </a>
 
 
