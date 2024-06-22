@@ -29,9 +29,6 @@ class StoreDocumantationRequest extends FormRequest
             'name' => [
                 'required', 'string', 'max:255',
             ],
-            'description' => [
-                'nullable', 'string', 'max:255',
-            ],
             'photo' => [
                 'nullable', 'mimes:jpeg,jpg,svg,png', 'max:10000',
             ],

@@ -22,7 +22,6 @@ class Documantation extends Model
 
     protected $fillable = [
         'name',
-        'description',
         'photo',
         'created_at',
         'updated_at',

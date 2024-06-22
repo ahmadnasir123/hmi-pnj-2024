@@ -91,23 +91,7 @@
                                                 </div>
                                             </div>
 
-                                            <div class="form-group row">
-                                                <label class="col-md-3 label-control" for="description">Deskripsi
-                                                    Kegiatan <code style="color:red;">required</code></label>
-                                                <div class="mx-auto col-md-9">
-                                                    <input type="text" id="description" name="description"
-                                                        class="form-control" placeholder="example Bukber 2024 di depok"
-                                                        value="{{old('description')}}" autocomplete="off" required>
-
-                                                    @if($errors->has('description'))
-                                                    <p style="font-style: bold; color: red;">{{
-                                                        $errors->first('description')
-                                                        }}</p>
-                                                    @endif
-                                                </div>
-                                            </div>
-
-
+                                            
                                             <div class="form-group row">
                                                 <label class="col-md-3 label-control" for="photo">Photo <code style="color:red;">required</code>
                                                 </label>
@@ -182,7 +166,6 @@
                                                 <tr>
                                                     <th>Date</th>
                                                     <th>Nama Kegiatan</th>
-                                                    <th>Deskripsi Kegiatan</th>
                                                     <th>Photo</th>
                                                     <th style="text-align:center; width:150px;">Action</th>
                                                 </tr>
@@ -193,7 +176,6 @@
                                                     <td>{{ isset($documantation_item->created_at) ? date("d/m/Y
                                                         H:i:s",strtotime($documantation_item->created_at)) : '' }}</td>
                                                     <td>{{ $documantation_item->name ?? '' }}</td>
-                                                    <td>{{ $documantation_item->description ?? '' }}</td>
                                                     <td>
                                                         @if($documantation_item->photo)
                                                         <a data-fancybox="gallery"
@@ -253,7 +235,6 @@
                                                 <tr>
                                                     <th>Date</th>
                                                     <th>Nama Kegiatan</th>
-                                                    <th>Deskripsi Kegiatan</th>
                                                     <th>Photo</th>
                                                     <th style="text-align:center; width:150px;">Action</th>
                                                 </tr>

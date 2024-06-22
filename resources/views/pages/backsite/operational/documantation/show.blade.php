@@ -4,10 +4,6 @@
         <td>{{ isset($documantation->name) ? $documantation->name : 'N/A' }}</td>
     </tr>
     <tr>
-        <th>Deskripsi Kegiatan</th>
-        <td>{{ isset($documantation->description) ? $documantation->description : 'N/A' }}</td>
-    </tr>
-    <tr>
         <th>Photo</th>
         <td>
             <img src="
