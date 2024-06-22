@@ -50,7 +50,7 @@
                         : "hover:text-gray-500 inline-flex items-center px-1 pt-1 text-lg font-medium" }} ">
                         Tulisan Kader
                     </a>
-                    <a href="#kegiatan"
+                    <a href="#contact"
                         class="text-[#1E2B4F] relative hover:text-gray-500 inline-flex items-center px-1 pt-1 text-lg font-medium">
                         Kontak
                     </a>
