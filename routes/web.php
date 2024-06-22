@@ -16,6 +16,7 @@ use App\Http\Controllers\backsite\DocumantationController;
 use App\Http\Controllers\Frontsite\ReportAlumniController;
 use App\Http\Controllers\Frontsite\ReportTulisanController;
 use App\Http\Controllers\Frontsite\ReportEmployeeController;
+use App\Http\Controllers\Frontsite\ReportDocumantationController;
 
 Route::resource('/', LandingController::class);
 
@@ -24,6 +25,8 @@ Route::resource('kader', ReportEmployeeController::class);
 Route::resource('alumni', ReportAlumniController::class);
 
 Route::resource('tulisan', ReportTulisanController::class);
+
+Route::resource('documantation', ReportDocumantationController::class);
 
 // Route::get('/', function () {
 //     return view('welcome');

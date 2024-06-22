@@ -6,7 +6,7 @@
 
 <!-- Content -->
 <main class="min-h-screen">
-    <!-- Alumni Schedule -->
+    <!-- Alumni Section -->
     <section id="alumni" class="relative mt-12">
         <div class="px-4 py-16 mx-auto max-w-7xl lg:px-14">
             <h3 class="text-2xl font-semibold text-[#1E2B4F]">Alumni/Kahmi</h3>
