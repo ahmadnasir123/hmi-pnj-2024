@@ -70,6 +70,10 @@ class User extends Authenticatable
         return $this->hasOne('App\Models\ManagementAccess\DetailUser', 'user_id');
     }
 
+    public function message()
+    {
+        return $this->hasMany('App\Models\Operational\Message', 'user_id');
+    }
 
     // one to many relationship
     public function role_user()
