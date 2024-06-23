@@ -5,6 +5,7 @@ namespace App\Http\Requests\User;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Gate;
 use Symfony\Component\HttpFoundation\Response;
+use Illuminate\Validation\Rule;
 
 class UpdateUserRequest extends FormRequest
 {
@@ -30,7 +31,8 @@ class UpdateUserRequest extends FormRequest
                 'required', 'string', 'max:255',
             ],
             'email' => [
-                'required', 'email', 'unique:users', 'max:255',
+                'required', 'email', 'max:255',
+                Rule::unique('users')->ignore($this->user),
             ],
             'password' => [
                 'min:8', 'string', 'max:255', 'mixedCase',

@@ -11,6 +11,7 @@ use App\Http\Controllers\backsite\TypeUserController;
 use App\Http\Controllers\frontsite\LandingController;
 use App\Http\Controllers\Frontsite\MessageController;
 use App\Http\Controllers\backsite\DashboardController;
+use App\Http\Controllers\frontsite\RegisterController;
 use App\Http\Controllers\backsite\ManagementController;
 use App\Http\Controllers\backsite\PermissionController;
 use App\Http\Controllers\backsite\DocumantationController;
@@ -37,8 +38,9 @@ Route::resource('documantation', ReportDocumantationController::class);
 // });
 
 Route::group([ 'middleware' => ['auth:sanctum', 'verified']], function () {
-    
+
     Route::resource('message', MessageController::class);
+    Route::resource('register_success', RegisterController::class);
 
 });
 

@@ -46,7 +46,6 @@
     @can('message_table')
     <div class="content-body">
         <section id="table-home">
-            <!-- Zero configuration table -->
             <div class="row">
                 <div class="col-12">
                     <div class="card">
@@ -57,14 +56,11 @@
                                 <ul class="mb-0 list-inline">
                                     <li><a data-action="collapse"><i class="ft-minus"></i></a></li>
                                     <li><a data-action="expand"><i class="ft-maximize"></i></a></li>
-                                    <!-- <li><a data-action="close"><i class="ft-x"></i></a></li> -->
                                 </ul>
                             </div>
                         </div>
-
                         <div class="card-content collapse show">
                             <div class="card-body card-dashboard">
-
                                 <div class="table-responsive">
                                     <table
                                         class="table table-striped table-bordered text-inputs-searching default-table">
@@ -78,42 +74,39 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @forelse($message as $key => $message_item)
-                                            <tr data-entry-id="{{ $appointment_item->id }}">
-                                                <td>{{ isset($message_item->created_at) ? date("d/m/Y
-                                                    H:i:s",strtotime($message_item->created_at)) : '' }}</td>
+                                            @forelse($message as $message_item)
+                                            <tr data-entry-id="{{ $message_item->id }}">
+                                                <td>{{ isset($message_item->created_at) ? date("d/m/Y H:i:s",
+                                                    strtotime($message_item->created_at)) : '' }}</td>
                                                 <td>{{ $message_item->user->name ?? '' }}</td>
                                                 <td>{{ $message_item->user->email ?? '' }}</td>
                                                 <td>{{ $message_item->pesan }}</td>
-                                            
                                                 <td class="text-center">
-
                                                     <div class="mb-1 mr-1 btn-group">
                                                         <button type="button"
                                                             class="btn btn-info btn-sm dropdown-toggle"
                                                             data-toggle="dropdown" aria-haspopup="true"
                                                             aria-expanded="false">Action</button>
                                                         <div class="dropdown-menu">
-
                                                             @can('message_delete')
                                                             <form
                                                                 action="{{ route('backsite.message.destroy', $message_item->id) }}"
                                                                 method="POST"
                                                                 onsubmit="return confirm('Are you sure want to delete this data ?');">
-                                                                <input type="hidden" name="_method" value="DELETE">
-                                                                <input type="hidden" name="_token"
-                                                                    value="{{ csrf_token() }}">
+                                                                @csrf
+                                                                @method('DELETE')
                                                                 <input type="submit" class="dropdown-item"
                                                                     value="Delete">
                                                             </form>
                                                             @endcan
-
                                                         </div>
                                                     </div>
                                                 </td>
                                             </tr>
                                             @empty
-                                            {{-- not found --}}
+                                            <tr>
+                                                <td colspan="5">No messages found</td>
+                                            </tr>
                                             @endforelse
                                         </tbody>
                                         <tfoot>
@@ -127,7 +120,6 @@
                                         </tfoot>
                                     </table>
                                 </div>
-
                             </div>
                         </div>
                     </div>

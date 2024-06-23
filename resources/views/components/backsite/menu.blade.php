@@ -130,6 +130,15 @@
                         </a>
                     </li>
                     {{-- @endcan --}}
+
+                    {{-- @can('message_access') --}}
+                    <li
+                        class="{{ request()->is('backsite/message') || request()->is('backsite/message/*') || request()->is('backsite/*/message') || request()->is('backsite/*/message/*') ? 'active' : '' }} ">
+                        <a class="menu-item" href="{{ route('backsite.message.index') }}">
+                            <i></i><span>Pesan</span>
+                        </a>
+                    </li>
+                    {{-- @endcan --}}
                 </ul>
             </li>
             {{-- @endcan --}}

@@ -4,8 +4,9 @@ namespace App\Http\Controllers\Frontsite;
 
 use Illuminate\Http\Request;
 use App\Models\Operational\Message;
-use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class MessageController extends Controller
 {
@@ -20,13 +21,13 @@ class MessageController extends Controller
     {
         $this->middleware('auth');
     }
-    
+
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('pages.frontsite.message.index');
+        return view('pages.frontsite.landing-page.index');
     }
 
     /**
@@ -44,11 +45,13 @@ class MessageController extends Controller
     {
         $data = $request->all();
 
+
         $message = new Message;
         $message->user_id = Auth::user()->id;
         $message->pesan = $data['pesan'];
 
         $message->save();
+
 
         alert()->success('Success Message', 'Successfully send message');
         return back();

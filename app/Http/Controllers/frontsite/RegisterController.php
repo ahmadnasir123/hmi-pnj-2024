@@ -7,12 +7,23 @@ use Illuminate\Http\Request;
 
 class RegisterController extends Controller
 {
+
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //
+        return view('pages.frontsite.success.signup-success');
     }
 
     /**
@@ -20,7 +31,7 @@ class RegisterController extends Controller
      */
     public function create()
     {
-        //
+        return abort('404');
     }
 
     /**
@@ -28,7 +39,7 @@ class RegisterController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return abort('404');
     }
 
     /**
@@ -36,7 +47,7 @@ class RegisterController extends Controller
      */
     public function show(string $id)
     {
-        //
+        return abort('404');
     }
 
     /**
@@ -44,7 +55,7 @@ class RegisterController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        return abort('404');
     }
 
     /**
@@ -52,7 +63,7 @@ class RegisterController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        return abort('404');
     }
 
     /**
@@ -60,6 +71,6 @@ class RegisterController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        return abort('404');
     }
 }
