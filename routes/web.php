@@ -9,10 +9,12 @@ use App\Http\Controllers\backsite\CategoryController;
 use App\Http\Controllers\backsite\EmployeeController;
 use App\Http\Controllers\backsite\TypeUserController;
 use App\Http\Controllers\frontsite\LandingController;
+use App\Http\Controllers\Frontsite\MessageController;
 use App\Http\Controllers\backsite\DashboardController;
 use App\Http\Controllers\backsite\ManagementController;
 use App\Http\Controllers\backsite\PermissionController;
 use App\Http\Controllers\backsite\DocumantationController;
+use App\Http\Controllers\Backsite\ReportMessageController;
 use App\Http\Controllers\Frontsite\ReportAlumniController;
 use App\Http\Controllers\Frontsite\ReportTulisanController;
 use App\Http\Controllers\Frontsite\ReportEmployeeController;
@@ -28,14 +30,17 @@ Route::resource('tulisan', ReportTulisanController::class);
 
 Route::resource('documantation', ReportDocumantationController::class);
 
+
+
 // Route::get('/', function () {
 //     return view('welcome');
 // });
 
-// Route::group([ 'middleware' => ['auth:sanctum', 'verified']], function () {
+Route::group([ 'middleware' => ['auth:sanctum', 'verified']], function () {
+    
+    Route::resource('message', MessageController::class);
 
-
-// });
+});
 
 
 // route for backsite
@@ -73,6 +78,9 @@ Route::group(['prefix' => 'backsite', 'as' => 'backsite.', 'middleware' => ['aut
 
     // tulisan
     Route::resource('tulisan', TulisanController::class);
+
+    // message
+    Route::resource('message', ReportMessageController::class);
 
 });
 // Route::middleware([

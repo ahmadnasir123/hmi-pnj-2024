@@ -242,6 +242,23 @@ class PermissionSeeder extends Seeder
                 'updated_at' => '2024-03-17 00:00:00',
             ],
 
+            // tulisan
+            [
+                'title'      => 'message_access',
+                'created_at' => '2024-03-17 00:00:00',
+                'updated_at' => '2024-03-17 00:00:00',
+            ],
+            [
+                'title'      => 'message_table',
+                'created_at' => '2024-03-17 00:00:00',
+                'updated_at' => '2024-03-17 00:00:00',
+            ],
+            [
+                'title'      => 'message_delete',
+                'created_at' => '2024-03-17 00:00:00',
+                'updated_at' => '2024-03-17 00:00:00',
+            ],
+
             // management
             [
                 'title'      => 'management_access',
