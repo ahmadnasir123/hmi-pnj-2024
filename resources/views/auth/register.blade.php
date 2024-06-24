@@ -12,8 +12,7 @@
             <!-- Logo Brand -->
             <a href="{{ route('index') }}" class="inline-flex items-center flex-shrink-0">
 
-                <img class="h-12 lg:h-16" src="{{ asset('/assets/frontsite/images/logo.png') }}"
-                    alt="Meet Doctor Logo" />
+                <img class="h-12 lg:h-16" src="{{ asset('/assets/frontsite/images/hmi.png') }}" alt="HMI Logo" />
 
             </a>
 
@@ -87,36 +86,12 @@
         </div>
         <!-- End Form -->
 
-        <!-- Qoute -->
-        <div class="hidden sm:block bg-[#F9FBFC]">
-            <div class="flex flex-col justify-center h-full px-24 pt-10 pb-20">
-                <div class="relative">
-                    <div class="relative top-0 -left-5 mb-7">
-                        <img src="{{ asset('/assets/frontsite/images/blockqoutation.svg') }}" class="h-[30px]" alt="" />
-                    </div>
-
-                    <p class="text-2xl leading-loose">
-                        MeetDoctor telah membantu saya terhubung dengan dokter yang
-                        professional dan memberikan dampak yang sangat besar kepada
-                        kesehatan yang baik kepada saya
-                    </p>
-
-                    <div class="flex-shrink-0 block group mt-7">
-                        <div class="flex items-center">
-                            <div class="ring-1 ring-[#0D63F3] ring-offset-4 rounded-full">
-                                <img class="inline-block rounded-full h-14 w-14"
-                                    src="{{ asset('/assets/frontsite/images/patient-testimonial.png') }}" alt="" />
-                            </div>
-                            <div class="ml-5">
-                                <p class="font-medium text-[#1E2B4F]">Shayna</p>
-                                <p class="text-sm text-[#AFAEC3]">Product Designer</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <!-- Image -->
+        <div class="flex items-center justify-center">
+            <img class="object-cover h-auto max-h-full shadow-lg"
+                src="{{ asset('/assets/frontsite/images/bg-hmi.png') }}" alt="Background Image">
         </div>
-        <!-- End Qoute -->
+        <!-- End Image -->
     </div>
 </div>
 

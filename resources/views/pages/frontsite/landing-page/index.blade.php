@@ -10,9 +10,9 @@
     <!-- Hero -->
     <section id="home" class="relative mt-12">
         <!-- Hero Image -->
-        <div class="hidden lg:block lg:absolute lg:z-10 lg:top-0 lg:right-0" aria-hidden="true">
-            <img src="{{ asset('/assets/frontsite/images/hmi.png') }}"
-                class="bg-cover bg-center object-cover object-center max-h-[580px]" alt="Hero Image" />
+       <div class="hidden lg:block lg:absolute lg:z-10 lg:top-0 lg:right-0 hero-image" aria-hidden="true">
+            <img src="{{ asset('/assets/frontsite/images/bg-hmi-2.png') }}"
+                class="bg-cover bg-center object-cover object-center max-h-[580px] hero-image-inner shadow-lg" alt="Hero Image" />
         </div>
 
         <!-- Hero Description -->
@@ -421,6 +421,19 @@
 
     .social-icon.tiktok:hover {
         background-color: #282828;
+    }
+</style>
+
+<style>
+    .hero-image {
+    right: 50px; /* Geser gambar ke kiri */
+    }
+    
+    .hero-image-inner {
+    max-width: none; /* Pastikan gambar tidak dibatasi lebar */
+    width: auto;
+    height: auto;
+    margin-top: 70px; /* Menambahkan margin atas */
     }
 </style>
 @endpush
